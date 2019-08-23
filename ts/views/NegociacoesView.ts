@@ -1,7 +1,7 @@
 /**
  * @namespace js/views/NegociacoesView
  */
-class NegociacoesView extends View{
+class NegociacoesView extends View<Negociacoes>{
 
   template(model: Negociacoes): string{
     return `
@@ -29,11 +29,5 @@ class NegociacoesView extends View{
           </tfoot>
       </table>
     `;
-  }
-
-  update(model: Negociacoes):void{
-
-    this._div.innerHTML = this.template(model);
-
   }
 }
