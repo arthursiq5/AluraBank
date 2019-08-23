@@ -1,12 +1,7 @@
 /**
  * @namespace js/views/NegociacoesView
  */
-class NegociacoesView{
-  private _div: HTMLDivElement;
-
-  constructor(idElemento:string){
-    this._div = <HTMLDivElement>document.getElementById(idElemento);
-  }
+class NegociacoesView extends View{
 
   template(model: Negociacoes): string{
     return `

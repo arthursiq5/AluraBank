@@ -13,6 +13,8 @@ class NegociacaoController{
   private _negociacoes = new Negociacoes();
   /** @var NegociacoesView negociacoesView */
   private _negociacoesView = new NegociacoesView('negociacoesView');
+  /** @var MensagemView mensagemView */
+  private _mensagemView = new MensagemView('mensagemView');
 
   /**
    * @constructor
@@ -45,12 +47,9 @@ class NegociacaoController{
                        );
      this._negociacoes.adiciona(negociacao);
 
-    this._negociacoes.toArray().forEach(negociacao => {
-      console.log(negociacao);
-    });
-    console.log('---///---');
-
     this._negociacoesView.update(this._negociacoes);
+
+    this._mensagemView.update("Negociação adicionada com sucesso");
 
     return this;
   }
