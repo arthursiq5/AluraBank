@@ -9,6 +9,8 @@ class NegociacaoController{
   private _inputQuantidade: HTMLInputElement;
   /** @var HTMLInputElement _inputValor */
   private _inputValor: HTMLInputElement;
+  /** @var Negociacoes _negociacoes */
+  private _negociacoes = new Negociacoes();
 
   /**
    * @constructor
@@ -24,7 +26,7 @@ class NegociacaoController{
   /**
    * @access public
    * @param Event evento
-   * @description adiciona uma negociação no banco
+   * @description adic iona uma negociação no banco
    * @returns NegociacaoController this
    */
   adiciona(evento: Event){
@@ -37,8 +39,13 @@ class NegociacaoController{
                         parseInt(this._inputQuantidade.value),
                         parseFloat(this._inputValor.value)
                        );
+     this._negociacoes.adiciona(negociacao);
 
-    console.log(negociacao);
+    this._negociacoes.toArray().forEach(negociacao => {
+      console.log(negociacao.data);
+      console.log(negociacao.quantidade);
+      console.log(negociacao.valor);
+    });
 
     return this;
   }
