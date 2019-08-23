@@ -11,7 +11,7 @@ class Negociacoes{
    * @description adiciona negociacao ao array
    * @return Negociacoes this
    */
-  adiciona(negociacao: Negociacao){
+  adiciona(negociacao: Negociacao): Negociacoes{
     this._negociacoes.push(negociacao);
     return this;
   }
@@ -20,8 +20,8 @@ class Negociacoes{
    * @access public
    * @return Array negociacoes
    */
-  toArray(){
-    return this._negociacoes;
+  toArray(): Negociacao[]{
+    return [].concat(this._negociacoes);
   }
 
   /**
@@ -29,7 +29,7 @@ class Negociacoes{
    * @description esvazia objeto
    * @return Negociacoes this
    */
-  esvazia(){
+  esvazia(): Negociacoes{
     this._negociacoes = [];
     return this;
   }
