@@ -29,7 +29,7 @@ class NegociacaoController{
    * @description adic iona uma negociação no banco
    * @returns NegociacaoController this
    */
-  adiciona(evento: Event){
+  adiciona(evento: Event): NegociacaoController{
     evento.preventDefault();
 
     const negociacao = new Negociacao(

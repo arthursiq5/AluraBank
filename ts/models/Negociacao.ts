@@ -19,7 +19,7 @@ class Negociacao{
    * @access public
    * @return Date data
    */
-  get data(){
+  get data():Date{
     return this._data;
   }
 
@@ -27,7 +27,7 @@ class Negociacao{
    * @access public
    * @return number quantidade
    */
-  get quantidade(){
+  get quantidade(): number{
     return this._valor;
   }
 
@@ -35,7 +35,7 @@ class Negociacao{
    * @access public
    * @return number valor
    */
-  get valor(){
+  get valor():number{
     return this._valor;
   }
 
@@ -43,7 +43,7 @@ class Negociacao{
    * @access public
    * @return number valor
    */
-  get volume(){
+  get volume(): number{
     return this.quantidade * this._valor;
   }
 }
