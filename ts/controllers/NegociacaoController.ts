@@ -23,6 +23,8 @@ class NegociacaoController{
     this._inputQuantidade =  <HTMLInputElement> document.getElementById("quantidade");
 
     this._inputValor =  <HTMLInputElement> document.getElementById("valor");
+
+    this._negociacoesView.update(this._negociacoes);
   }
 
   /**
@@ -44,10 +46,11 @@ class NegociacaoController{
      this._negociacoes.adiciona(negociacao);
 
     this._negociacoes.toArray().forEach(negociacao => {
-      console.log(negociacao.data);
-      console.log(negociacao.quantidade);
-      console.log(negociacao.valor);
+      console.log(negociacao);
     });
+    console.log('---///---');
+
+    this._negociacoesView.update(this._negociacoes);
 
     return this;
   }

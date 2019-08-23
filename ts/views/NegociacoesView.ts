@@ -8,7 +8,7 @@ class NegociacoesView{
     this._div = <HTMLDivElement>document.getElementById(idElemento);
   }
 
-  template(): string{
+  template(model: Negociacoes): string{
     return `
     <table class="table table-hover table-bordered">
           <thead>
@@ -19,7 +19,14 @@ class NegociacoesView{
                   <th>VOLUME</th>
               </tr>
           </thead>
-
+            ${ model.toArray().map(negociacao =>
+              `<tr>
+                  <td>${negociacao.data.getDate()}/${(negociacao.data.getMonth()+1)}/${negociacao.data.getFullYear()}</td>
+                  <td>${negociacao.quantidade}</td>
+                  <td>${negociacao.valor}</td>
+                  <td>${negociacao.volume}</td>
+                </tr>
+              `).join('')}
           <tbody>
           </tbody>
 
@@ -29,9 +36,9 @@ class NegociacoesView{
     `;
   }
 
-  update():void{
+  update(model: Negociacoes):void{
 
-    this._div.innerHTML = this.template();
+    this._div.innerHTML = this.template(model);
 
   }
 }
