@@ -32,7 +32,7 @@ class NegociacaoController{
 
     const negociacao = new Negociacao(
                         new Date(
-                          this._inputData.value.replace(/-/g, ',')
+                          this._inputData.value.replace(/-/g, '/')
                         ),
                         parseInt(this._inputQuantidade.value),
                         parseFloat(this._inputValor.value)
