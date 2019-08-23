@@ -1,4 +1,4 @@
-class View<T>{
+abstract class View<T>{
   protected _div: HTMLDivElement;
 
   constructor(idElemento:string){
@@ -9,7 +9,5 @@ class View<T>{
     this._div.innerHTML = this.template(model);
   }
 
-  template(model: T):string{
-    throw new Error("Método \"template\" deve ser sobrescrito");
-  }
+  abstract template(model: T):string;
 }
