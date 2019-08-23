@@ -11,6 +11,8 @@ class NegociacaoController{
   private _inputValor: HTMLInputElement;
   /** @var Negociacoes _negociacoes */
   private _negociacoes = new Negociacoes();
+  /** @var NegociacoesView negociacoesView */
+  private _negociacoesView = new NegociacoesView('negociacoesView');
 
   /**
    * @constructor
