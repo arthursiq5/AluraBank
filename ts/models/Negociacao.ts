@@ -1,5 +1,5 @@
 /**
- * @namespace ts/models/Negociacao
+ * @namespace js/models/Negociacao
  */
 class Negociacao{
 

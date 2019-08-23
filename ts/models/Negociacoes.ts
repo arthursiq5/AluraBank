@@ -1,8 +1,9 @@
 /**
- * @namespace ts/models/Negociacoes
+ * @namespace js/models/Negociacoes
  * @description encapsula array de negociações
  */
 class Negociacoes{
+  /** @var Negociacao[] negociacoes */
   private _negociacoes: Negociacao[] = [];
 
   /**

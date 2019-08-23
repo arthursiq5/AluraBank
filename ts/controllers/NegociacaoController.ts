@@ -1,5 +1,5 @@
 /**
- * @namespace ts/controllers/NegociacaoController
+ * @namespace js/controllers/NegociacaoController
  */
 class NegociacaoController{
 
