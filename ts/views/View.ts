@@ -13,7 +13,7 @@ export abstract class View<T>{
    * @access public
    * @param string idElemento
    */
-  constructor(idElemento:string, escapar?:boolean){
+  constructor(idElemento:string, escapar: boolean = false){
     this._div = $(idElemento);
     this._escapar = escapar;
   }
