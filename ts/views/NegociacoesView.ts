@@ -1,6 +1,5 @@
 import { View } from './View';
 import { Negociacoes } from '../models/Negociacoes';
-import { Negociacao } from '../models/Negociacao';
 
 /**
  * @namespace ts/views/NegociacoesView
