@@ -10,7 +10,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "tsc",
     "autobuild": "tsc -w",
-    "server": "lite-server --baseDir=."
+    "server": "lite-server --baseDir=.",
+    "start": "concurrently \"npm run autobuild\" \"npm run server\""
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
   "homepage": "https://github.com/arthursiq5/AluraBank#readme",
   "devDependencies": {
     "@types/jquery": "^2.0.42",
+    "concurrently": "^3.4.0",
     "lite-server": "^2.3.0",
     "typescript": "^2.3.2"
   }
