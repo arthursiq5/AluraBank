@@ -1,8 +1,6 @@
-import { Negociacoes } from '../models/Negociacoes';
-import { Negociacao } from '../models/Negociacao';
+import { Negociacoes, Negociacao } from '../models/index';
 
-import { NegociacoesView } from '../views/NegociacoesView';
-import { MensagemView } from '../views/MensagemView';
+import { NegociacoesView, MensagemView } from '../views/index';
 /**
  * @namespace ts/controllers/NegociacaoController
  * @exports NegociacaoController
