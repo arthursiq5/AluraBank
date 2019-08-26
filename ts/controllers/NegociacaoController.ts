@@ -1,7 +1,13 @@
+import { Negociacoes } from '../models/Negociacoes';
+import { Negociacao } from '../models/Negociacao';
+
+import { NegociacoesView } from '../views/NegociacoesView';
+import { MensagemView } from '../views/MensagemView';
 /**
  * @namespace ts/controllers/NegociacaoController
+ * @exports NegociacaoController
  */
-class NegociacaoController{
+export class NegociacaoController{
 
   /** @var JQuery _inputData */
   private _inputData: JQuery;

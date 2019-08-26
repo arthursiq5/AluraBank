@@ -1,8 +1,10 @@
+import { Negociacao } from './Negociacao';
 /**
  * @namespace ts/models/Negociacoes
  * @description encapsula array de negociações
+ * @exports Negociacoes
  */
-class Negociacoes{
+export class Negociacoes{
   /** @var Negociacao[] negociacoes */
   private _negociacoes: Negociacao[] = [];
 

@@ -1,7 +1,12 @@
+import { View } from './View';
+import { Negociacoes } from '../models/Negociacoes';
+import { Negociacao } from '../models/Negociacao';
+
 /**
  * @namespace ts/views/NegociacoesView
+ * @exports NegociacoesView
  */
-class NegociacoesView extends View<Negociacoes>{
+ export class NegociacoesView extends View<Negociacoes>{
 
   /**
    * @abstract

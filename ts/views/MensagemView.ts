@@ -1,7 +1,9 @@
+import { View } from './View';
 /**
  * @namespace ts/views/MensagemView
+ * @exports MensagemView
  */
-class MensagemView extends View<string>{
+export class MensagemView extends View<string>{
 
   /**
    * @access public

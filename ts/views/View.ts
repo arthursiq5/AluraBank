@@ -1,7 +1,8 @@
 /**
  * @namespace ts/views/View
+ * @exports View
  */
-abstract class View<T>{
+export abstract class View<T>{
   /** @var JQuery _div */
   protected _div: JQuery;
 

@@ -1,7 +1,8 @@
 /**
  * @namespace ts/models/Negociacao
+ * @exports Negociacao
  */
-class Negociacao{
+export class Negociacao{
 
   /**
    * @constructs
