@@ -3,6 +3,13 @@
  */
 class NegociacoesView extends View<Negociacoes>{
 
+  /**
+   * @abstract
+   * @access public
+   * @description produz template da tela
+   * @param T model
+   * @return string
+   */
   template(model: Negociacoes): string{
     return `
     <table class="table table-hover table-bordered">

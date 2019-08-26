@@ -1,13 +1,31 @@
 abstract class View<T>{
-  protected _div: HTMLDivElement;
+  /** @var JQuery _div */
+  protected _div: JQuery;
 
+  /**
+   * @access public
+   * @param string idElemento
+   */
   constructor(idElemento:string){
-    this._div = <HTMLDivElement>document.getElementById(idElemento);
+    this._div = $(idElemento);
   }
 
+  /**
+   * @access public
+   * @description atualiza tela
+   * @param T model
+   * @return null
+   */
   update(model: T){
-    this._div.innerHTML = this.template(model);
+    this._div.html(this.template(model));
   }
 
+  /**
+   * @abstract
+   * @access public
+   * @description produz template da tela
+   * @param T model
+   * @return string
+   */
   abstract template(model: T):string;
 }
