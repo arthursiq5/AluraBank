@@ -16,9 +16,9 @@ export class NegociacaoController{
   /** @var Negociacoes _negociacoes */
   private _negociacoes = new Negociacoes();
   /** @var NegociacoesView negociacoesView */
-  private _negociacoesView = new NegociacoesView('#negociacoesView');
+  private _negociacoesView = new NegociacoesView('#negociacoesView', true);
   /** @var MensagemView mensagemView */
-  private _mensagemView = new MensagemView('#mensagemView');
+  private _mensagemView = new MensagemView('#mensagemView', true);
 
   /**
    * @constructor
