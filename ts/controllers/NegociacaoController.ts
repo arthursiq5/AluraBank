@@ -37,9 +37,9 @@ export class NegociacaoController{
    * @access public
    * @param Event evento
    * @description adiciona uma negociação no banco
-   * @returns NegociacaoController this
+   * @returns void
    */
-  adiciona(evento: Event): NegociacaoController{
+  adiciona(evento: Event): void{
     evento.preventDefault();
 
     const negociacao = new Negociacao(
@@ -52,7 +52,5 @@ export class NegociacaoController{
     this._negociacoesView.update(this._negociacoes);
 
     this._mensagemView.update("Negociação adicionada com sucesso");
-
-    return this;
   }
 }

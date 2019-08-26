@@ -22,9 +22,9 @@ export abstract class View<T>{
    * @access public
    * @description atualiza tela
    * @param T model
-   * @return null
+   * @return void
    */
-  update(model: T){
+  update(model: T): void{
     let template = this.template(model);
 
     if(this._escapar)
