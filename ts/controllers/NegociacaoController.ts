@@ -1,5 +1,5 @@
 import { Negociacoes, Negociacao } from '../models/index';
-
+import { DiaDaSemana } from '../utils/DiaDaSemana';
 import { NegociacoesView, MensagemView } from '../views/index';
 /**
  * @namespace ts/controllers/NegociacaoController
@@ -64,14 +64,4 @@ export class NegociacaoController{
     return data.getDay() == DiaDaSemana.Sabado
         || data.getDay() == DiaDaSemana.Domingo;
   }
-}
-
-enum DiaDaSemana{
-  Domingo,
-  Segunda,
-  Terca,
-  Quarta,
-  Quinta,
-  Sexta,
-  Sabado
 }
