@@ -1,5 +1,5 @@
 /**
- * @namespace js/views/MensagemView
+ * @namespace ts/views/MensagemView
  */
 class MensagemView extends View<string>{
 

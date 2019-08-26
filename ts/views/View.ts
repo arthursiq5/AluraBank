@@ -1,3 +1,6 @@
+/**
+ * @namespace ts/views/View
+ */
 abstract class View<T>{
   /** @var JQuery _div */
   protected _div: JQuery;

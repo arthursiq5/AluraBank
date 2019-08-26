@@ -1,5 +1,5 @@
 /**
- * @namespace js/views/NegociacoesView
+ * @namespace ts/views/NegociacoesView
  */
 class NegociacoesView extends View<Negociacoes>{
 
