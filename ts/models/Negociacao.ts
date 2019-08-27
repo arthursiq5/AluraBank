@@ -1,4 +1,4 @@
-import { DiaDaSemana } from '../utils/DiaDaSemana';
+import { DiaDaSemana } from '../helpers/DiaDaSemana';
 /**
  * @namespace ts/models/Negociacao
  * @exports Negociacao

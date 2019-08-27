@@ -1,5 +1,5 @@
 import { Negociacoes, Negociacao } from '../models/index';
-import { DiaDaSemana } from '../utils/DiaDaSemana';
+import { DiaDaSemana } from '../helpers/DiaDaSemana';
 import { NegociacoesView, MensagemView } from '../views/index';
 /**
  * @namespace ts/controllers/NegociacaoController
