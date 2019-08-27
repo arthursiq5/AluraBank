@@ -1,4 +1,8 @@
-
+/**
+ * @enum DiaDaSemana
+ * @namespace ts/utils/DiaDaSemana
+ * @description usado para validar dias da semana
+ */
 export enum DiaDaSemana{
   Domingo = 0,
   Segunda = 1,
