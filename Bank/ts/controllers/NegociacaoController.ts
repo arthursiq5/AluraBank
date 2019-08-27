@@ -1,7 +1,7 @@
 import { Negociacoes, Negociacao, NegociacaoParcial } from '../models/index';
 import { DiaDaSemana } from '../helpers/DiaDaSemana';
 import { NegociacoesView, MensagemView } from '../views/index';
-import {domInject} from '../helpers/decorators/index';
+import { domInject, throttle } from '../helpers/decorators/index';
 /**
  * @namespace ts/controllers/NegociacaoController
  * @exports NegociacaoController
@@ -40,8 +40,8 @@ export class NegociacaoController{
    * @description adiciona uma negociação no banco
    * @returns void
    */
-  adiciona(evento: Event): void{
-    evento.preventDefault();
+  @throttle()
+  adiciona(): void{
 
     let data = new Date((this._inputData.val()).replace(/-/g, '/'));
 
@@ -66,6 +66,7 @@ export class NegociacaoController{
         || data.getDay() == DiaDaSemana.Domingo;
   }
 
+  @throttle()
   importaDados(){
 
     function isOk(res: Response){
