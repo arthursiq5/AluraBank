@@ -12,6 +12,6 @@ export class MensagemView extends View<string>{
    * @return string
    */
   template(model:string): string{
-    return `<p class="alert alert-info">${model}</p>`;
+    return (model.length) ? `<p class="alert alert-info">${model}</p>` : "";
   }
 }
