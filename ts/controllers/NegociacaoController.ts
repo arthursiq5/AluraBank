@@ -1,6 +1,7 @@
 import { Negociacoes, Negociacao } from '../models/index';
 import { DiaDaSemana } from '../helpers/DiaDaSemana';
 import { NegociacoesView, MensagemView } from '../views/index';
+import {domInject} from '../helpers/decorators/index';
 /**
  * @namespace ts/controllers/NegociacaoController
  * @exports NegociacaoController
@@ -8,11 +9,17 @@ import { NegociacoesView, MensagemView } from '../views/index';
 export class NegociacaoController{
 
   /** @var JQuery _inputData */
+  @domInject('#data')
   private _inputData: JQuery;
+
   /** @var JQuery _inputQuantidade */
+  @domInject('#quantidade')
   private _inputQuantidade: JQuery;
+
   /** @var JQuery _inputValor */
+  @domInject('#valor')
   private _inputValor: JQuery;
+
   /** @var Negociacoes _negociacoes */
   private _negociacoes = new Negociacoes();
   /** @var NegociacoesView negociacoesView */
@@ -24,12 +31,6 @@ export class NegociacaoController{
    * @constructor
    */
   constructor(){
-    this._inputData = $("#data");
-
-    this._inputQuantidade = $("#quantidade");
-
-    this._inputValor =  $("#valor");
-
     this._negociacoesView.update(this._negociacoes);
   }
 
