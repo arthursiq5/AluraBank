@@ -1,6 +1,7 @@
 import { Negociacoes, Negociacao } from '../models/index';
 import { DiaDaSemana } from '../helpers/DiaDaSemana';
 import { NegociacoesView, MensagemView } from '../views/index';
+import { logarTempoDeExecucao } from '../helpers/decorators/index';
 /**
  * @namespace ts/controllers/NegociacaoController
  * @exports NegociacaoController
@@ -39,6 +40,7 @@ export class NegociacaoController{
    * @description adiciona uma negociação no banco
    * @returns void
    */
+  @logarTempoDeExecucao()
   adiciona(evento: Event): void{
     evento.preventDefault();
 

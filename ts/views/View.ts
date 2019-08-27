@@ -1,3 +1,4 @@
+import {logarTempoDeExecucao} from '../helpers/decorators/index';
 /**
  * @namespace ts/views/View
  * @exports View
@@ -24,6 +25,7 @@ export abstract class View<T>{
    * @param T model
    * @return void
    */
+  @logarTempoDeExecucao()
   update(model: T): void{
     let template = this.template(model);
 
