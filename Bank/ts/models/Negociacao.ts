@@ -4,7 +4,7 @@ import { Imprimivel } from './index';
  * @namespace ts/models/Negociacao
  * @exports Negociacao
  */
-export class Negociacao extends Imprimivel{
+export class Negociacao implements Imprimivel{
   /** @var data:Date */
   readonly data: Date;
   /** @var quantidade:number */
@@ -23,7 +23,6 @@ export class Negociacao extends Imprimivel{
     quantidade: number,
     valor: number
   ){
-    super();
     if(this._isWorkDay(data))
       throw new Error('Não é possível criar negociações em fins de semana, por favor, tente novamente');
     this.data = data;

@@ -1,4 +1,4 @@
-export abstract class Imprimivel{
-  abstract toText():void;
-  abstract toString():string;
+export interface Imprimivel{
+  toText():void;
+  toString():string;
 }

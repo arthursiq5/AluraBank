@@ -4,7 +4,7 @@ import { Negociacao, Imprimivel } from './index';
  * @description encapsula array de negociações
  * @exports Negociacoes
  */
-export class Negociacoes extends Imprimivel{
+export class Negociacoes implements Imprimivel{
   /** @var Negociacao[] negociacoes */
   private _negociacoes: Negociacao[] = [];
 
