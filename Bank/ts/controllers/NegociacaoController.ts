@@ -82,29 +82,12 @@ export class NegociacaoController{
              return res;
            throw new Error(res.statusText);
          })
-<<<<<<< HEAD
-
-=======
->>>>>>> e062b2f5b2cadaea964880e25fcba7eaf25cfd0e
          .then((negociacoesParaImportar:Negociacao[]) => {
 
            return negociacoesParaImportar
              .filter(negociacao =>
                !this._negociacoes.toArray().some(jaImportada =>
                  negociacao.isEquals(jaImportada)))
-<<<<<<< HEAD
-
-         })
-         .then((negociacoesParaImportar:Negociacao[]) => {
-
-           negociacoesParaImportar.forEach(
-             negociacao => this._negociacoes.adiciona(negociacao)
-           );
-         })
-         .catch(err => console.error(err));
-
-         this._negociacoesView.update(this._negociacoes);
-=======
          })
          .then((negociacoesParaImportar:Negociacao[]) => {
            negociacoesParaImportar.forEach(
@@ -113,6 +96,5 @@ export class NegociacaoController{
            this._negociacoesView.update(this._negociacoes)
          })
          .catch(err => console.error(err))
->>>>>>> e062b2f5b2cadaea964880e25fcba7eaf25cfd0e
    }
 }
