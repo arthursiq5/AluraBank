@@ -1,10 +1,10 @@
-import { Negociacao, Imprimivel, Igualavel } from './index';
+import { Negociacao, MeuObjeto } from './index';
 /**
  * @namespace ts/models/Negociacoes
  * @description encapsula array de negociações
  * @exports Negociacoes
  */
-export class Negociacoes implements Imprimivel, Igualavel<Negociacoes>{
+export class Negociacoes implements MeuObjeto <Negociacoes>{
   /** @var Negociacao[] negociacoes */
   private _negociacoes: Negociacao[] = [];
 

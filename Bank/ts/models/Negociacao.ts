@@ -1,10 +1,10 @@
 import { DiaDaSemana } from '../helpers/index';
-import { Imprimivel, Igualavel } from './index';
+import { MeuObjeto } from './index';
 /**
  * @namespace ts/models/Negociacao
  * @exports Negociacao
  */
-export class Negociacao implements Imprimivel, Igualavel<Negociacao>{
+export class Negociacao implements MeuObjeto<Negociacao>{
   /** @var data:Date */
   readonly data: Date;
   /** @var quantidade:number */
