@@ -1,5 +1,5 @@
 import { Negociacoes, Negociacao, NegociacaoParcial } from '../models/index';
-import { DiaDaSemana } from '../helpers/DiaDaSemana';
+import { DiaDaSemana, HandlerFunction } from '../helpers/index';
 import { NegociacoesView, MensagemView } from '../views/index';
 import { domInject, throttle } from '../helpers/decorators/index';
 import { NegociacaoService } from '../services/index';
@@ -70,7 +70,7 @@ export class NegociacaoController{
   @throttle()
   importaDados(){
 
-    function isOk(res: Response){
+    const isOk: HandlerFunction = (res: Response) => {
       if(res.ok){
         return res;
       }else{

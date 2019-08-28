@@ -1,4 +1,4 @@
-import { DiaDaSemana } from '../helpers/DiaDaSemana';
+import { DiaDaSemana, HandlerFunction } from '../helpers/index';
 /**
  * @namespace ts/models/Negociacao
  * @exports Negociacao
