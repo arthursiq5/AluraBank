@@ -70,16 +70,13 @@ export class NegociacaoController{
   @throttle()
   importaDados(){
 
-    const isOk: HandlerFunction = (res: Response) => {
-      if(res.ok){
-        return res;
-      }else{
-        throw new Error(res.statusText);
-      }
-    }
 
     this._negociacaoService
-        .obterNegociacoes(isOk)
+        .obterNegociacoes((res: Response) => {
+          if(res.ok)
+            return res;
+          throw new Error(res.statusText);
+        })
         .then((negociacoes:Negociacao[]) => {
           negociacoes.forEach(
             negociacao => this._negociacoes.adiciona(negociacao)
