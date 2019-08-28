@@ -1,5 +1,5 @@
-import { Negociacoes, Negociacao, NegociacaoParcial } from '../models/index';
-import { DiaDaSemana, HandlerFunction } from '../helpers/index';
+import { Negociacoes, Negociacao } from '../models/index';
+import { DiaDaSemana, imprime } from '../helpers/index';
 import { NegociacoesView, MensagemView } from '../views/index';
 import { domInject, throttle } from '../helpers/decorators/index';
 import { NegociacaoService } from '../services/index';
@@ -56,7 +56,8 @@ export class NegociacaoController{
                         parseInt(this._inputQuantidade.val()),
                         parseFloat(this._inputValor.val())
                        );
-     this._negociacoes.adiciona(negociacao);
+    this._negociacoes.adiciona(negociacao);
+    imprime(negociacao, this._negociacoes);
 
     this._negociacoesView.update(this._negociacoes);
 
@@ -75,8 +76,6 @@ export class NegociacaoController{
    */
   @throttle()
   importaDados():void{
-
-
     this._negociacaoService
         .obterNegociacoes((res: Response) => {
           if(res.ok)

@@ -1,10 +1,10 @@
-import { Negociacao } from './Negociacao';
+import { Negociacao, Imprimivel } from './index';
 /**
  * @namespace ts/models/Negociacoes
  * @description encapsula array de negociações
  * @exports Negociacoes
  */
-export class Negociacoes{
+export class Negociacoes extends Imprimivel{
   /** @var Negociacao[] negociacoes */
   private _negociacoes: Negociacao[] = [];
 
@@ -35,5 +35,13 @@ export class Negociacoes{
   esvazia(): Negociacoes{
     this._negociacoes = [];
     return this;
+  }
+
+  toString():string{
+    return JSON.stringify(this._negociacoes);
+  }
+
+  toText():void{
+    console.log(this.toString());
   }
 }
