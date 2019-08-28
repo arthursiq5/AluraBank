@@ -74,26 +74,27 @@ export class NegociacaoController{
    * @description pega os dados das negociações na API e bota na tabela
    * @returns void
    */
-  @throttle()
-  importaDados():void{
-    this._negociacaoService
-        .obterNegociacoes((res: Response) => {
-          if(res.ok)
-            return res;
-          throw new Error(res.statusText);
-        })
-        .then((negociacoesParaImportar:Negociacao[]) => {
-          const negociacoesJaImportadas = this._negociacoes.toArray();
+   @throttle()
+   importaDados():void{
+     this._negociacaoService
+         .obterNegociacoes((res: Response) => {
+           if(res.ok)
+             return res;
+           throw new Error(res.statusText);
+         })
+         .then((negociacoesParaImportar:Negociacao[]) => {
 
-          negociacoesParaImportar
-            .filter(negociacao =>
-              !negociacoesJaImportadas.some(jaImportada =>
-                negociacao.isEquals(jaImportada)))
-            .forEach(
-            negociacao => this._negociacoes.adiciona(negociacao)
-          );
-          this._negociacoesView.update(this._negociacoes)
-        })
-        .catch(err => console.error(err))
-  }
+           return negociacoesParaImportar
+             .filter(negociacao =>
+               !this._negociacoes.toArray().some(jaImportada =>
+                 negociacao.isEquals(jaImportada)))
+         })
+         .then((negociacoesParaImportar:Negociacao[]) => {
+           negociacoesParaImportar.forEach(
+             negociacao => this._negociacoes.adiciona(negociacao)
+           );
+           this._negociacoesView.update(this._negociacoes)
+         })
+         .catch(err => console.error(err))
+   }
 }
