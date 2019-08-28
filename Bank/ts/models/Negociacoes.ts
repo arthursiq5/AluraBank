@@ -10,7 +10,7 @@ export class Negociacoes{
 
   /**
    * @access public
-   * @param Negociacao negociacao
+   * @param negociacao:Negociacao
    * @description adiciona negociacao ao array
    * @return Negociacoes this
    */
@@ -21,7 +21,7 @@ export class Negociacoes{
 
   /**
    * @access public
-   * @return Array negociacoes
+   * @return Negociacao[]
    */
   toArray(): Negociacao[]{
     return ([] as Negociacao[]).concat(this._negociacoes);
@@ -30,7 +30,7 @@ export class Negociacoes{
   /**
    * @access public
    * @description esvazia objeto
-   * @return Negociacoes this
+   * @return Negociacoes
    */
   esvazia(): Negociacoes{
     this._negociacoes = [];

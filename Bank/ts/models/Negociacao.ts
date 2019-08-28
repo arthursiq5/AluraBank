@@ -4,16 +4,18 @@ import { DiaDaSemana, HandlerFunction } from '../helpers/index';
  * @exports Negociacao
  */
 export class Negociacao{
-
+  /** @var data:Date */
   readonly data: Date;
+  /** @var quantidade:number */
   readonly quantidade: number;
+  /** @var valor:number */
   readonly valor: number;
 
   /**
    * @constructs
-   * @param Date data
-   * @param number quantidade
-   * @param number valor
+   * @param data:Date
+   * @param quantidade:number
+   * @param valor:number
    */
   constructor(
     data: Date,
@@ -29,12 +31,18 @@ export class Negociacao{
 
   /**
    * @access public
-   * @return number valor
+   * @return number
    */
   get volume(): number{
     return this.quantidade * this.valor;
   }
 
+  /**
+   * @access private
+   * @description verifica se o agendamento foi cadastrado em dia útil
+   * @param data:Date
+   * @returns boolean
+   */
   private _isWorkDay(data:Date):boolean{
     return data.getDay() == DiaDaSemana.Sabado
         || data.getDay() == DiaDaSemana.Domingo;

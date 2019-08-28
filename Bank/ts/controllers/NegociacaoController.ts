@@ -9,24 +9,25 @@ import { NegociacaoService } from '../services/index';
  */
 export class NegociacaoController{
 
-  /** @var JQuery _inputData */
+  /** @var _inputData:JQuery */
   @domInject('#data')
   private _inputData: JQuery;
 
-  /** @var JQuery _inputQuantidade */
+  /** @var _inputQuantidade:JQuery */
   @domInject('#quantidade')
   private _inputQuantidade: JQuery;
 
-  /** @var JQuery _inputValor */
+  /** @var _inputValor:JQuery */
   @domInject('#valor')
   private _inputValor: JQuery;
 
-  /** @var Negociacoes _negociacoes */
+  /** @var _negociacoes:Negociacoes */
   private _negociacoes = new Negociacoes();
-  /** @var NegociacoesView negociacoesView */
+  /** @var _negociacoesView:NegociacoesView */
   private _negociacoesView = new NegociacoesView('#negociacoesView', true);
-  /** @var MensagemView mensagemView */
+  /** @var _mensagemView:MensagemView */
   private _mensagemView = new MensagemView('#mensagemView', true);
+  /** @var _negociacaoService:NegociacaoService */
   private _negociacaoService = new NegociacaoService();
   /**
    * @constructor
@@ -37,7 +38,7 @@ export class NegociacaoController{
 
   /**
    * @access public
-   * @param Event evento
+   * @param evento:Event
    * @description adiciona uma negociação no banco
    * @returns void
    */
@@ -67,8 +68,13 @@ export class NegociacaoController{
         || data.getDay() == DiaDaSemana.Domingo;
   }
 
+  /**
+   * @access public
+   * @description pega os dados das negociações na API e bota na tabela
+   * @returns void
+   */
   @throttle()
-  importaDados(){
+  importaDados():void{
 
 
     this._negociacaoService
