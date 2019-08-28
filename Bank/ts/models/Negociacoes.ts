@@ -1,10 +1,10 @@
-import { Negociacao, Imprimivel } from './index';
+import { Negociacao, Imprimivel, Igualavel } from './index';
 /**
  * @namespace ts/models/Negociacoes
  * @description encapsula array de negociações
  * @exports Negociacoes
  */
-export class Negociacoes implements Imprimivel{
+export class Negociacoes implements Imprimivel, Igualavel<Negociacoes>{
   /** @var Negociacao[] negociacoes */
   private _negociacoes: Negociacao[] = [];
 
@@ -43,5 +43,10 @@ export class Negociacoes implements Imprimivel{
 
   toText():void{
     console.log(this.toString());
+  }
+
+  isEquals(negociacoes: Negociacoes):boolean{
+    return JSON.stringify(this._negociacoes)
+        == JSON.stringify(negociacoes._negociacoes);
   }
 }

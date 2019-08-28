@@ -1,10 +1,10 @@
 import { DiaDaSemana } from '../helpers/index';
-import { Imprimivel } from './index';
+import { Imprimivel, Igualavel } from './index';
 /**
  * @namespace ts/models/Negociacao
  * @exports Negociacao
  */
-export class Negociacao implements Imprimivel{
+export class Negociacao implements Imprimivel, Igualavel<Negociacao>{
   /** @var data:Date */
   readonly data: Date;
   /** @var quantidade:number */
@@ -59,5 +59,16 @@ export class Negociacao implements Imprimivel{
 
   toText():void{
     console.log(this.toString());
+  }
+
+  /**
+   * @description verifica se o objeto passado é igual a 'this'
+   */
+  isEquals(negociacao:Negociacao):boolean{
+    return this.data.getDate()     == negociacao.data.getDate()
+        && this.data.getMonth()    == negociacao.data.getMonth()
+        && this.data.getFullYear() == negociacao.data.getFullYear()
+        && this.quantidade         == negociacao.quantidade
+        && this.valor              == negociacao.valor;
   }
 }
