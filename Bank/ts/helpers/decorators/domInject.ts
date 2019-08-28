@@ -16,7 +16,6 @@ export function domInject(seletor:string){
 
     const getter = function(){
       if(!elemento){
-        console.log(`buscando elemento ${propertyKey} com seletor ${seletor}`)
         elemento = $(seletor);
       }
       return elemento;
