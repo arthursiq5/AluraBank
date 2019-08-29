@@ -37,10 +37,20 @@ export class Negociacoes implements MeuObjeto <Negociacoes>{
     return this;
   }
 
+  /**
+   * @access public
+   * @description converte objeto para string
+   * @return string
+   */
   toString():string{
     return JSON.stringify(this._negociacoes);
   }
 
+  /**
+   * @access public
+   * @description loga a string do objeto no terminal
+   * @return void
+   */
   toText():void{
     console.log(this.toString());
   }

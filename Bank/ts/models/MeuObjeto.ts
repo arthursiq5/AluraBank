@@ -1,4 +1,8 @@
 import { Igualavel, Imprimivel } from './index';
-export interface MeuObjeto<T> extends Imprimivel, Igualavel<T>{
-
-}
+/**
+ * @namespace ts/models/MeuObjeto
+ * @description diz que objeto implementa Imprimivel e
+ Igualavel
+ */
+export interface MeuObjeto<T>
+  extends Imprimivel, Igualavel<T>{ }

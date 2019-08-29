@@ -49,6 +49,11 @@ export class Negociacao implements MeuObjeto<Negociacao>{
         || data.getDay() == DiaDaSemana.Domingo;
   }
 
+  /**
+   * @access public
+   * @description converte objeto para string
+   * @return string
+   */
   toString():string{
     return `
     Data: ${this.data}
@@ -57,6 +62,11 @@ export class Negociacao implements MeuObjeto<Negociacao>{
     Volume: ${this.volume}`;
   }
 
+  /**
+   * @access public
+   * @description loga a string do objeto no terminal
+   * @return void
+   */
   toText():void{
     console.log(this.toString());
   }

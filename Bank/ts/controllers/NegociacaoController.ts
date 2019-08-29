@@ -64,6 +64,11 @@ export class NegociacaoController{
     this._mensagemView.update("Negociação adicionada com sucesso");
   }
 
+  /**
+   * @access private
+   * @param Date:data
+   * @return boolean
+   */
   private _isWorkDay(data:Date):boolean{
     return data.getDay() == DiaDaSemana.Sabado
         || data.getDay() == DiaDaSemana.Domingo;
